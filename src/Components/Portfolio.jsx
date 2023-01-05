@@ -1,5 +1,5 @@
 import React, {useState, useRef} from "react"
-import * as S from "../Components/style"
+import * as S from "../Components/style/Portfolio"
 import ProfileImg from "../Components/assets/perfil.png"
 import {Link} from "react-router-dom"
 import Moon from "./assets/moon.png"
@@ -8,42 +8,13 @@ import Linkedin from "./assets/logolinkedin.png"
 import Github from "./assets/logogith.png"
 import Gmail from "./assets/logogmail.png"
 import Ms from "./assets/MS.png"
-
+import Cv from "./assets/curriculo.pdf"
+// import Menu from "./Sidebar.js"
 
 export default function Portfolio(){
 
-    const [status, setStatus] = useState(false)
-    const refSection = useRef()
-    const refButtonOne = useRef()
-    const refButtonTwo = useRef()
-    const refButtonThree = useRef()
-    const refButtonFour = useRef()
- 
-    function Change(){
-        setStatus(!status)
-       if(status === false){
-        refButtonOne.current.style.backgroundColor="#2F2F32"
-        refButtonTwo.current.style.backgroundColor="#2F2F32"
-        refButtonThree.current.style.backgroundColor="#2F2F32"
-        refButtonFour.current.style.backgroundColor="#2F2F32"
-        refSection.current.style.backgroundColor="#06062b"
-  
-
-       }else{
-        refButtonOne.current.style.backgroundColor="#F1CE42"
-        refButtonTwo.current.style.backgroundColor="#F1CE42"
-        refButtonThree.current.style.backgroundColor="#F1CE42"
-        refButtonFour.current.style.backgroundColor="#F1CE42"
-        refSection.current.style.backgroundColor="#F1CE42"
-       }
-
-
-        
-    }
-
     return(
-        <S.Body ref={refSection} >
-            {/* <button id="contain-btn" onClick={Change}> {status ? (<img src={Sun}/>) : (<img src={Moon}/>)} </button> */}
+        <S.Body >
         <S.Header>
             <img src={Ms} alt="logo" />
             <ul>
@@ -69,34 +40,15 @@ export default function Portfolio(){
 
            <div className="box-two">
             
-            <a href="#"><button className="cv">Linkedin</button></a>
-            <a href="#"><button className="cv">Github</button></a>
-            <a href="#"><button className="cv">Gmail</button></a>
-            <a href="#"><button className="cv">Ver currículo</button></a>
+            <button className="contatos"><a href="https://www.linkedin.com/in/tech-mariana-santos/" target="_blank">Linkedin</a></button>
+            <button className="contatos"><a href="https://github.com/mari2654" target="_blank">Github</a></button>
+            <button className="contatos"><a href="https://api.whatsapp.com/send?phone=5521970814637" target="_blank">Whatsapp</a></button>
+            <button className="contatos"><a href={Cv} target="_blank">Ver currículo</a></button>
            </div>
            </section>
             
             
-        </S.Main>
-
-        {/* <footer>
-           <div class="logos">
-           <figure>
-           <a href="#" target="_blank"><img src={Linkedin} alt="logo-linkedin" id="linkedin" /> </a> 
-           </figure>
-           <figure>
-               <a href="#" target="_blank"> <img src={Gmail} alt="logo-gmail" id="gmail" /> </a>
-           </figure>
-          <figure>
-               <a href="#" target="_blank"> <img src={Github} alt="logo-github" id="github"/> </a>
-          </figure>
-         </div>
-        
-        </footer> */}
-
-           
-          
-
+        </S.Main>  
        </S.Body>
     )
 }
